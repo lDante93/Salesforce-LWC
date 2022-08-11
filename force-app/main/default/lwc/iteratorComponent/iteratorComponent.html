@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="List of Contacts">
+        <ul>
+            <template for:each={contacts} for:item="contact">
+                <li key={contact.id}> Name: {contact.name}, Age: {contact.age}</li>
+            </template>
+            <template iterator:myiterator={contacts}>
+                <li key={myiterator.value.id}>
+                    <div if:true={myiterator.first}>First: Name: {myiterator.value.name}, Age:
+                    {myiterator.value.age}
+                </div>
+                <div if:true={myiterator.last}>
+                    Last: Name: {myiterator.value.name}, Age: {myiterator.value.age}
+                </div>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
