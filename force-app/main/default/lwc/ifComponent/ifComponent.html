@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="If Component">
+        <div class="slds-p-around_small slds-text-heading_large" if:false={flag}><p>false</p></div>
+        <div class="slds-p-around_small slds-text-heading_large" if:true={flag}><p>true</p></div>
+        <lightning-button label="Click" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+    </lightning-card>
+</template>
