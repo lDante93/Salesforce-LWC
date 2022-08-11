@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Card 2">
+    <div class="slds-p-around_small">
+       <p>Name: {name}</p>
+       <p>Age: {age}</p>
+       <p>Salary: {salary}</p>
+       <lightning-input type="text" label="Enter Name" value={name} onchange={nameHandler}></lightning-input>
+       <lightning-input type="text" label="Enter Age" value={age} onchange={ageHandler}></lightning-input>
+       <lightning-input type="text" label="Enter Salary" value={salary} onchange={salaryHandler}></lightning-input>
+    </div>
+</lightning-card>
+</template>
