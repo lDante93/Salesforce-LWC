@@ -1,0 +1,10 @@
+<template>
+    <lightning-card>
+        {text} I am Child Component - {show}
+    </br>
+        <template for:each={people} for:item="person">
+            <li key={person.id}> Name: {person.name}, Age: {person.age}</li>
+        </template>
+    </lightning-card>
+
+</template>
