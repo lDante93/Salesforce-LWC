@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+        <lightning-layout multiple-rows class="border">
+            <!-- 1 Parent to Child Communication -->
+            <lightning-layout-item size="12" padding="around-small">
+                <lightning-card title = "Parent Component"></lightning-card>
+                <hr>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small">
+                <lightning-input label="Enter message to child Component" onchange={handleInput}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small">
+                Message from Child Component HTML:  {messageHTML}
+            </lightning-layout-item>
+            <lightning-layout-item size="12" padding="around-small">
+                Message from Child Component JS:  {messageJS}
+            </lightning-layout-item>
+            <lightning-layout-item  size="12" padding="around-small">
+                <c-child-communication-component onmycustomeventhtml={parentHandlerHTML}></c-child-communication-component>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

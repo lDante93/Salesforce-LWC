@@ -1,0 +1,19 @@
+<template>
+    <lightning-layout multiple-rows class="child">
+        <lightning-layout-item size="12"  padding="around-small">
+            <lightning-card title = "Child Component"></lightning-card>
+            <hr>
+        </lightning-layout-item>
+        <lightning-layout-item size="12"  padding="around-small">
+            Parent to Child - message from Parent Component: {message}
+        </lightning-layout-item>
+        <lightning-layout-item size="12"  padding="around-small">
+            Child to Parent - message to Parent Component (HTML markup):
+            <lightning-input onchange={childHandlerHTML}></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item size="12"  padding="around-small">
+            Child to Parent - message to Parent Component (JS):
+            <lightning-input onchange={childHandlerJS}></lightning-input>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>
