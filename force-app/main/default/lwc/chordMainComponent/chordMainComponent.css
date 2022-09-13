@@ -1,0 +1,22 @@
+
+   
+  li {
+    font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
+    border-bottom: 1px solid #ccc;
+  }
+   
+  li:last-child {
+    border: none;
+  }
+   
+  li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    width: 200px;
+  }
+   
+  li:hover {
+    font-size: 20px;
+    background: #f6f6f6;
+  }

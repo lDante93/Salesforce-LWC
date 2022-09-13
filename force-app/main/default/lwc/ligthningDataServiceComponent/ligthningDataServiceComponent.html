@@ -1,0 +1,24 @@
+<template>
+
+    Ligthning Data Service
+    <lightning-card>
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input type="text" label="Name" onchange={nameHandler}></lightning-input>
+                <lightning-input type="text" label="Phone" onchange={phoneHandler}></lightning-input>
+                <lightning-input type="text" label="Email" onchange={emailHandler}></lightning-input>
+                <lightning-button label="Create Contact" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+    <lightning-card>
+        <lightning-layout>
+            <lightning-layout-item>
+                <p><lightning-formatted-text  value={returnName}></lightning-formatted-text></p>
+                <p><lightning-formatted-phone  value={returnPhone}></lightning-formatted-phone></p>
+                <p><lightning-formatted-email  value={returnEmail}></lightning-formatted-email></p>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

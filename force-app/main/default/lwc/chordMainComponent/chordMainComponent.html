@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Chords List">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <ul>
+                    <template for:each={chords} for:item="chord">
+                        <li key={chord.id}> Name: {chord.name}, Third: {chord.third}, Fifth: {chord.fifth}</li>
+            
+                    </template>
+                </ul>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-combobox
+                name="progress"
+                label="Chord Picker"
+                value={third}
+                placeholder="Select Chord"
+                options={returnChords}
+                onchange={handleChange} ></lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+</template>
