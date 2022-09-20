@@ -1,0 +1,23 @@
+<template>
+    <template if:true={hasBikes}>
+        <lightning-card>
+            <template for:each={bikes.data} for:item="bike">
+                <li key={bike.Id}>
+                    <div id={bike.Id} onclick={handleListClick}>
+                        <lightning-layout multiple-rows class="layout">
+                            <lightning-layout-item size="12" padding="around-small" class="image">
+                                <img src={bike.Picture_URL__c} width="200">
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                <b>{bike.Name}</b>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="12">
+                                MSRP: {bike.MSRP__c} $
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </li>
+            </template>
+        </lightning-card>
+    </template>
+</template>

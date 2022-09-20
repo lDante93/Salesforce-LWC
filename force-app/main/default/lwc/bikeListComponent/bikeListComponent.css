@@ -1,0 +1,15 @@
+.layout {
+  text-align: center;
+  background-color: white;
+  margin: 20px 20px 20px 20px;
+  padding-bottom: 15px;
+}
+li {
+  list-style-type: none;
+}
+:host {
+  --sds-c-card-color-background: rgb(243, 243, 243);
+}
+div {
+  cursor: pointer;
+}
