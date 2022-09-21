@@ -1,77 +1,77 @@
 <template>
     <template if:true={hasBike}>
-                <lightning-card title={bike.Name} icon-name="utility:check">
-                    <lightning-layout>
-                        <lightning-layout-item flexibility="auto" padding="around-large" class="image">
-                            <img src={bike.Picture_URL__c} width="500">
-                        </lightning-layout-item>
-                    </lightning-layout>
-                    <lightning-layout multiple-rows class="layout">
-                        <lightning-layout-item size="3" class="row">
-                            Level: {selectedBike}
-                        </lightning-layout-item>
-                        <lightning-layout-item size="9" class="row">
-                            {bike.Level__c}
-                        </lightning-layout-item>
-                        <lightning-layout-item size="3" class="row">
-                            MSRP:
-                        </lightning-layout-item>
-                        <lightning-layout-item size="9" class="row price">
-                            {bike.MSRP__c} $
-                        </lightning-layout-item>
-                        <lightning-layout-item size="12" class="row row-heading">
-                            <b>ELECTRIC COMPONENTS</b>
-                        </lightning-layout-item>
-                        <lightning-layout-item size="3" class="row">
-                            Battery:
-                        </lightning-layout-item>
-                        <lightning-layout-item size="9" class="row">
-                            {bike.Battery__c}
-                        </lightning-layout-item>
-                        <lightning-layout-item size="3" class="row">
-                            Charger:
-                        </lightning-layout-item>
-                        <lightning-layout-item size="9" class="row">
-                            {bike.Charger__c}
-                        </lightning-layout-item>
-                        <lightning-layout-item size="3" class="row">
-                            Motor:
-                        </lightning-layout-item>
-                        <lightning-layout-item size="9" class="row">
-                            {bike.Motor__c}
-                        </lightning-layout-item>
-                        <lightning-layout-item size="12" class="row row-heading">
-                            <b>FRAME</b>
-                        </lightning-layout-item>
-                        <lightning-layout-item size="3" class="row">
-                            Frame:
-                        </lightning-layout-item>
-                        <lightning-layout-item size="9" class="row">
-                            {bike.Material__c}
-                        </lightning-layout-item>
-                        <lightning-layout-item size="3" class="row">
-                            Fork:
-                        </lightning-layout-item>
-                        <lightning-layout-item size="9" class="row">
-                            {bike.Fork__c}
-                        </lightning-layout-item>
-                        <lightning-layout-item size="12" class="row row-heading">
-                            <b>BRAKES</b>
-                        </lightning-layout-item>
-                        <lightning-layout-item size="3" class="row">
-                            Front:
-                        </lightning-layout-item>
-                        <lightning-layout-item size="9" class="row">
-                            {bike.Front_Brakes__c}
-                        </lightning-layout-item>
-                        <lightning-layout-item size="3" class="row">
-                            Rear:
-                        </lightning-layout-item>
-                        <lightning-layout-item size="9" class="row">
-                            {bike.Rear_Brakes__c}
-                        </lightning-layout-item>
-                    </lightning-layout>
-                </lightning-card>
+        <lightning-card title={bike.Name} icon-name="utility:check">
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-large" class="image">
+                    <img src={bike.Picture_URL__c} width="500">
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout multiple-rows class="layout">
+                <lightning-layout-item size="3" class="row">
+                    Level: {selectedBike}
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="row">
+                    {bike.Level__c}
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="row">
+                    MSRP:
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="row price">
+                    {bike.MSRP__c} $
+                </lightning-layout-item>
+                <lightning-layout-item size="12" class="row row-heading">
+                    <b>ELECTRIC COMPONENTS</b>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="row">
+                    Battery:
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="row">
+                    {bike.Battery__c}
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="row">
+                    Charger:
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="row">
+                    {bike.Charger__c}
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="row">
+                    Motor:
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="row">
+                    {bike.Motor__c}
+                </lightning-layout-item>
+                <lightning-layout-item size="12" class="row row-heading">
+                    <b>FRAME</b>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="row">
+                    Frame:
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="row">
+                    {bike.Material__c}
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="row">
+                    Fork:
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="row">
+                    {bike.Fork__c}
+                </lightning-layout-item>
+                <lightning-layout-item size="12" class="row row-heading">
+                    <b>BRAKES</b>
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="row">
+                    Front:
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="row">
+                    {bike.Front_Brakes__c}
+                </lightning-layout-item>
+                <lightning-layout-item size="3" class="row">
+                    Rear:
+                </lightning-layout-item>
+                <lightning-layout-item size="9" class="row">
+                    {bike.Rear_Brakes__c}
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
     </template>
     <template if:false={hasBike}>
         <lightning-card title="Select bike" icon-name="utility:check">

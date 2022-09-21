@@ -1,18 +1,28 @@
 <template>
-    <lightning-card title = "Filters" icon-name="utility:ad_set">
-        <lightning-layout multiple-rows>
+    <lightning-card title="Filters" icon-name="utility:ad_set">
+        <lightning-layout multiple-rows class="layout">
             <lightning-layout-item size=12>
-                <lightning-input label="Search Key"></lightning-input>
+                <lightning-input label="Search Name" name="Search Name" type="search" onchange={handleSearchInput}>
+                </lightning-input>
             </lightning-layout-item>
             <lightning-layout-item size=12>
-                <lightning-input label="Max Price"></lightning-input>
-                Slider
+                <lightning-slider label="Max Price" value={sliderValue} onchange={handleSliderInput} max=10000>
+                </lightning-slider>
             </lightning-layout-item>
-            <lightning-layout-item flexibility="auto">
-                <b>Category</b>
+            <lightning-layout-item size=12>
+                <lightning-checkbox-group name="Category" label="Category" options={categoryOptions} value={category}
+                    onchange={handleCategoryChange}>
+                </lightning-checkbox-group>
             </lightning-layout-item>
-            <lightning-layout-item flexibility="auto">
-                Checkbox - Mountaint
+            <lightning-layout-item size=12>
+                <lightning-checkbox-group name="Material" label="Material" options={materialOptions} value={material}
+                    onchange={handleMaterialChange}>
+                </lightning-checkbox-group>
+            </lightning-layout-item>
+            <lightning-layout-item size=12>
+                <lightning-checkbox-group name="Level" label="Level" options={levelOptions} value={level}
+                    onchange={handleLevelChange}>
+                </lightning-checkbox-group>
             </lightning-layout-item>
         </lightning-layout>
     </lightning-card>
