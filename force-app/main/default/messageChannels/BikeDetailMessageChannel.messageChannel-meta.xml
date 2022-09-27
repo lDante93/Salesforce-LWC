@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>BikeDetailMessageChannel</masterLabel>
+    <isExposed>true</isExposed>
+    <description>Bike Message Channel to pass data</description>
+    <lightningMessageFields>
+        <fieldName>data</fieldName>
+        <description>Bike data</description>
+    </lightningMessageFields>
+</LightningMessageChannel>

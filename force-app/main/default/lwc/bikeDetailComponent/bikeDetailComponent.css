@@ -1,5 +1,11 @@
-.image {
+.layout-image {
   text-align: center;
+}
+.image {
+  width: 90%;
+}
+.image-no-bike {
+  width: 40%;
 }
 .layout {
   margin-left: 30px;

@@ -2,26 +2,25 @@
     <lightning-card title="Filters" icon-name="utility:ad_set">
         <lightning-layout multiple-rows class="layout">
             <lightning-layout-item size=12>
-                <lightning-input label="Search Name" name="Search Name" type="search" onchange={handleSearchInput}>
+                <lightning-input label="Search Name" name="Search Name" type="search" onchange={handleFilter} data-type="search">
                 </lightning-input>
             </lightning-layout-item>
             <lightning-layout-item size=12>
-                <lightning-slider label="Max Price" value={sliderValue} onchange={handleSliderInput} max=10000>
+                <lightning-slider label="Max Price" value={sliderValue} onchange={handleFilter} max=10000 data-type="slider">
                 </lightning-slider>
             </lightning-layout-item>
             <lightning-layout-item size=12>
-                <lightning-checkbox-group name="Category" label="Category" options={categoryOptions} value={category}
-                    onchange={handleCategoryChange}>
+                <lightning-checkbox-group name="Category" label="Category" options={categoryOptions} value={category} onchange={handleFilter} data-type="category">
                 </lightning-checkbox-group>
             </lightning-layout-item>
             <lightning-layout-item size=12>
                 <lightning-checkbox-group name="Material" label="Material" options={materialOptions} value={material}
-                    onchange={handleMaterialChange}>
+                    onchange={handleFilter} data-type="material">
                 </lightning-checkbox-group>
             </lightning-layout-item>
             <lightning-layout-item size=12>
                 <lightning-checkbox-group name="Level" label="Level" options={levelOptions} value={level}
-                    onchange={handleLevelChange}>
+                    onchange={handleFilter} data-type="level">
                 </lightning-checkbox-group>
             </lightning-layout-item>
         </lightning-layout>

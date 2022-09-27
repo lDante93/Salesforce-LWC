@@ -2,8 +2,8 @@
     <template if:true={hasBike}>
         <lightning-card title={bike.Name} icon-name="utility:check">
             <lightning-layout>
-                <lightning-layout-item flexibility="auto" padding="around-large" class="image">
-                    <img src={bike.Picture_URL__c} width="500">
+                <lightning-layout-item flexibility="auto" padding="around-large" class="layout-image">
+                    <img src={bike.Picture_URL__c} class="image">
                 </lightning-layout-item>
             </lightning-layout>
             <lightning-layout multiple-rows class="layout">
@@ -76,8 +76,8 @@
     <template if:false={hasBike}>
         <lightning-card title="Select bike" icon-name="utility:check">
             <lightning-layout multiple-rows>
-                <lightning-layout-item size="12" padding="around-large" class="image">
-                    <img src={image} width="250">
+                <lightning-layout-item size="12" padding="around-large" class="layout-image">
+                    <img src={image} class="image-no-bike">
                 </lightning-layout-item>
                 <lightning-layout-item size="12" class="row-no-bike">
                     No bike selected

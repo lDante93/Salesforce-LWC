@@ -1,28 +1,50 @@
 import { LightningElement, wire, track } from 'lwc';
-import { registerListener, unregisterAllListeners } from 'c/pubsub';
 import { CurrentPageReference } from 'lightning/navigation';
 import BIKE_ASSETS from '@salesforce/resourceUrl/bike_assets';
+import bikeMessageChannel from '@salesforce/messageChannel/BikeDetailMessageChannel__c';
+import {
+  subscribe,
+  unsubscribe,
+  APPLICATION_SCOPE,
+  MessageContext,
+} from 'lightning/messageService';
 
 export default class BikeDetailComponent extends LightningElement {
+  @wire(MessageContext)
+  messageContext;
+
   @wire(CurrentPageReference) pageRef;
   @track bike;
   image = BIKE_ASSETS + '/logo.svg';
 
-  handleEvent(selectedBike) {
+  handleMessage(selectedBike) {
     this.bike = selectedBike;
   }
 
   get hasBike() {
-    if (this.bike) {
-      return true;
-    }
-    return false;
+    return !!this.bike;
   }
 
-  connectedCallback() {
-    registerListener('selectedbikeevent', this.handleEvent, this);
+  subscribeToMessageChannel() {
+    if (!this.subscription) {
+      this.subscription = subscribe(
+        this.messageContext,
+        bikeMessageChannel,
+        (message) => this.handleMessage(message),
+        { scope: APPLICATION_SCOPE }
+      );
+    }
   }
+
+  unsubscribeToMessageChannel() {
+    unsubscribe(this.subscription);
+    this.subscription = null;
+  }
+  connectedCallback() {
+    this.subscribeToMessageChannel();
+  }
+
   disconnectedCallback() {
-    unregisterAllListeners(this);
+    this.unsubscribeToMessageChannel();
   }
 }

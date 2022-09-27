@@ -1,8 +1,12 @@
 import { LightningElement, wire } from 'lwc';
-import { fireEvent } from 'c/pubsub';
 import { CurrentPageReference } from 'lightning/navigation';
+import { publish, MessageContext } from 'lightning/messageService';
+import filterMessageChannel from '@salesforce/messageChannel/BikeFilterMessageChannel__c';
 
 export default class BikeFilterComponent extends LightningElement {
+  @wire(MessageContext)
+  messageContext;
+
   @wire(CurrentPageReference) pageRef;
 
   category = [];
@@ -32,24 +36,9 @@ export default class BikeFilterComponent extends LightningElement {
     ];
   }
   
-  handleSearchInput(event) {
+  handleFilter(event) {
     this.searchValue = event.target.value;
-    fireEvent(this.pageRef, 'searchvalueevent', this.searchValue);
-  }
-  handleSliderInput(event) {
-    this.sliderValue = event.target.value;
-    fireEvent(this.pageRef, 'slidervalueevent', this.sliderValue);
-  }
-  handleCategoryChange(event) {
-    this.category = event.detail.value;
-    fireEvent(this.pageRef, 'categoryvalueevent', this.category);
-  }
-  handleMaterialChange(event) {
-    this.material = event.detail.value;
-    fireEvent(this.pageRef, 'materialvalueevent', this.material);
-  }
-  handleLevelChange(event) {
-    this.level = event.detail.value;
-    fireEvent(this.pageRef, 'levelvalueevent', this.level);
+    const type = event.currentTarget.dataset.type;
+    publish(this.messageContext, filterMessageChannel, {type: type, value: this.searchValue});
   }
 }

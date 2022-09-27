@@ -5,8 +5,8 @@
                 <li key={bike.Id}>
                     <div id={bike.Id} onclick={handleListClick}>
                         <lightning-layout multiple-rows class="layout">
-                            <lightning-layout-item size="12" padding="around-small" class="image">
-                                <img src={bike.Picture_URL__c} width="200">
+                            <lightning-layout-item size="12" padding="around-small" class="layout-image">
+                                <img src={bike.Picture_URL__c} class="image">
                             </lightning-layout-item>
                             <lightning-layout-item size="12">
                                 <b>{bike.Name}</b>
@@ -36,8 +36,8 @@
     <template if:false={hasBikes}>
         <lightning-card >
             <lightning-layout multiple-rows>
-                <lightning-layout-item size="12" padding="around-large" class="image">
-                    <img src={image} width="250">
+                <lightning-layout-item size="12" padding="around-large" class="layout-image">
+                    <img src={image} class="image-no-bike">
                 </lightning-layout-item>
                 <lightning-layout-item size="12" class="row-no-bike">
                     There are no products matching your current filters

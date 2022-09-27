@@ -18,8 +18,14 @@ div {
   font-size: medium;
   text-align: center;
 }
-.image {
+.layout-image {
   text-align: center;
+}
+.image {
+  width: 40%;
+}
+.image-no-bike {
+  width: 40%;
 }
 .footer2{
   margin: 10px 10px 10px 20px;
